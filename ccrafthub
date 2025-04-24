@@ -1,0 +1,138 @@
+-- Why are you here, thief?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Murder
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- إعداد واجهة الشاشة
+local frame = Instance.new("Frame")
+frame.Parent = screenGui
+frame.Size = UDim2.new(0, 400, 0, 200)
+frame.Position = UDim2.new(0.5, -200, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+-- إعداد النص
+local label = Instance.new("TextLabel")
+label.Parent = frame
+label.Size = UDim2.new(1, 0, 0.3, 0)
+label.Position = UDim2.new(0, 0, 0, 0)
+label.Text = "What is your language? / ماهي لغتك"
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextScaled = true
+
+-- إعداد زر الإنجليزية
+local englishButton = Instance.new("TextButton")
+englishButton.Parent = frame
+englishButton.Size = UDim2.new(0.4, 0, 0.3, 0)
+englishButton.Position = UDim2.new(0.1, 0, 0.5, 0)
+englishButton.Text = "English"
+englishButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+englishButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+-- إعداد زر العربية
+local arabicButton = Instance.new("TextButton")
+arabicButton.Parent = frame
+arabicButton.Size = UDim2.new(0.4, 0, 0.3, 0)
+arabicButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+arabicButton.Text = "عربي"
+arabicButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+arabicButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+-- دالة لحذف الواجهة بعد الضغط على أي زر
+local function removeGui()
+    screenGui:Destroy()
+end
+
+-- دالة لإظهار رسالة لما يتم اختيار اللغة
+local function showLanguageMessage(language)
+    print("You selected: " .. language)
+end
+
+-- ربط الزرين بالأحداث
+englishButton.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTSROBLOX738833/mm99cCraft/refs/heads/main/eng"))()
+    showLanguageMessage("English")
+    removeGui()  -- حذف الواجهة بعد اختيار اللغة
+end)
+
+arabicButton.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTSROBLOX738833/mm99cCraft/refs/heads/main/arp"))()
+    showLanguageMessage("عربي")
+    removeGui()  -- حذف الواجهة بعد اختيار اللغة
+end)
